@@ -45,36 +45,44 @@ body {
 h1 {
   font-family: 'Rochester', cursive;
   font-size: 3em;
+  color: var(--darkest-brown)
+}
+
+p {
+  color: var(--darkest-brown);
 }
 
 /*--------->HEADER<-----------*/
-nav {
-  align-items: center;
-  display: flex;
-  width: 100%;
-  margin: 0;
-  padding: 2% 0;
-  justify-content: space-between;
+
+header{
+  padding: 20px;
+}
+#nav-bar{
+  display: grid;
+  grid-template-columns: 25% 75%;
 }
 
-nav img {
-  width: 100px;
-  margin: 0;
+#header-image{
+  max-width: 60%;
+  height: auto;
 }
+
 
 nav ul li {
   color: var(--dark-brown);
-  display: inline-flex;
+  display: inline-block;
   list-style: none;
-  margin: 0 40px 20px 40px;
+  margin: 1em;
+
+
 }
 
 nav ul li a {
   font-size: 14px;
   text-decoration: none;
   color: var(--darkest-brown);
-  font-weight: 600;
-}
+  font-weight: 600;}
+/
 
 /*--------->Main<-----------*/
 #top-section {
@@ -110,6 +118,7 @@ div .boxes {
   border: 2px var(--darkest-brown) solid;
   padding: 0 20px 20px 20px;
   margin: 10px;
+  height: 90%;
 }
 
 #button1 {
@@ -136,13 +145,37 @@ div .boxes {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.boxes button {
+  background: var(--dark-brown);
+  border-radius: 18px;
+  color: var(--ligth-white);
+  font-weight: 600;
+  height: 10%;
+  width: 50%;
+}
+
+.boxes button:hover {
+  border-bottom: 3px solid var(--cherry);
+  transform: scale(1.1);
+}
+
 /*--------->Footer<-----------*/
 footer {
+  background: var(--light-brown);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 20px;
   margin-top: 40px;
-  background: var(--light-brown);
+}
+
+h3 {
+  color: var(--darkest-brown);
+  font-weight: 900;
 }
 
 #get-started-email {
@@ -151,24 +184,34 @@ footer {
 }
 
 input[type=text], input[type=submit] {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  display: inline-block;
   border: 1px solid var(--ligth-brown);
   box-sizing: border-box;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 10px;
+  width: 100%;
+}
+
+input[type=submit] {
+  background: var(--darkest-brown);
+  color: var(--ligth-white);
+  font-weight: 600;
+}
+
+input[type=submit]:hover {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.24), 0 15px 40px 0 rgba(0, 0, 0, 0.19);
 }
 
 #social-media-icons {
   /*Takes from line 3 to 4 in the 3x3 grid*/
-  grid-column: 3/4;
   align-self: center;
+  grid-column: 3/4;
 }
 
 #social-media-icons a:not(#email-different):not(#github) {
-  font-size:25px;
-  margin: 20px;
   color: var(--darkest-brown);
+  font-size: 25px;
+  margin: 20px;
   text-decoration: none;
 }
 
@@ -182,6 +225,65 @@ adress {
 }
 
 /*--------->Media Queries<-----------*/
+@media (max-width: 768px) {
+  section {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  iframe {
+    width: 80%;
+    margin: 0 0 50px 0;
+  }
+
+  #prices-box {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #prices-box button {
+    margin-bottom: 20px;
+  }
+
+  #get-started-email {
+    /*Takes from line 1 to 4 in the 3x3 grid*/
+    grid-column: 1/4;
+  }
+
+  #social-media-icons {
+    grid-column: 1/4;
+}
+
+
+#nav-bar{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+
+}
+
+#header-image{
+  display: inline-block;
+  max-width: 30%;
+  height: auto;
+}
+
+nav ul li{
+  display: inline-block;
+
+}
+
+nav ul li a{
+  text-decoration: none;
+}
+
+}
+}
+
 /*--------->NOTES<-----------*/
 /*
 - Para centrar algo horizontalmente en navegadores modernos, usa display:
